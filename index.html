@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            z-index: 10;
+        }
+
+        .language-switcher:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            background: #e9ecef;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #495057;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .nav-tab:last-child {
+            border-right: none;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: -2px;
+        }
+
+        .nav-tab:hover:not(.active) {
+            background: #f1f3f4;
+        }
+
+        .content {
+            padding: 40px;
+            min-height: 600px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 250px;
+            background: #e9ecef;
+            border-radius: 10px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .profile-title {
+            font-size: 1.2em;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            line-height: 1.8;
+            color: #495057;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .whats-new {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .year-section {
+            margin-bottom: 40px;
+        }
+
+        .year-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+
+        .news-date {
+            width: 100px;
+            color: #6c757d;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+
+        .news-content {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .info-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .info-link:hover {
+            text-decoration: underline;
+        }
+
+        .research-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 5px solid #007bff;
+        }
+
+        .research-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .research-description {
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .link-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #007bff;
+        }
+
+        .link-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .link-list {
+            list-style: none;
+        }
+
+        .link-list li {
+            margin-bottom: 8px;
+        }
+
+        .link-list a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-list a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 180px;
+                margin: 0 auto;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+
+            .nav-tab {
+                flex: 1 1 50%;
+                min-width: 120px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .header-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image">
+        <div class="language-switcher" onclick="toggleLanguage()">
+            <span id="lang-text">ENGLISH</span>
+        </div>
+        <div class="header-overlay">
+            <h1 class="header-title" data-ko="# 당신의 이름 심리학" data-en="# YOUR NAME psychology"># YOUR NAME psychology</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="openTab(event, 'home')" data-ko="홈" data-en="HOME">HOME</button>
+            <button class="nav-tab" onclick="openTab(event, 'career')" data-ko="경력" data-en="CAREER">CAREER</button>
+            <button class="nav-tab" onclick="openTab(event, 'research')" data-ko="연구" data-en="RESEARCH">RESEARCH</button>
+            <button class="nav-tab" onclick="openTab(event, 'links')" data-ko="링크" data-en="LINKS">LINKS</button>
+        </div>
+
+        <div class="content">
+            <div id="home" class="tab-content active">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <!-- Replace with your photo -->
+                        <img src="https://via.placeholder.com/200x250/e9ecef/6c757d?text=Your+Photo" alt="Profile Photo">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name" data-ko="당신의 이름" data-en="YOUR NAME">YOUR NAME</h2>
+                        <p class="profile-title">PhD</p>
+                        <div class="profile-details">
+                            <p><strong data-ko="소속:" data-en="Affiliation:">Affiliation:</strong> <span data-ko="당신의 대학교" data-en="Your University">Your University</span></p>
+                            <p><strong data-ko="학과:" data-en="Department:">Department:</strong> <span data-ko="심리학과" data-en="Department of Psychology">Department of Psychology</span></p>
+                            <p><strong data-ko="직책:" data-en="Position:">Position:</strong> <span data-ko="부교수" data-en="Associate Professor">Associate Professor</span></p>
+                            <p><strong data-ko="전공:" data-en="Specialization:">Specialization:</strong> <span data-ko="사회심리학, 범죄심리학" data-en="Social Psychology, Forensic Psychology">Social Psychology, Forensic Psychology</span></p>
+                            <br>
+                            <p><strong data-ko="이메일:" data-en="Email:">Email:</strong> your.email@university.edu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="whats-new">
+                    <h3 class="section-title" data-ko="새소식" data-en="What's New">What's New</h3>
+                    
+                    <div class="year-section">
+                        <h4 class="year-title">2024년도</h4>
+                        
+                        <div class="news-item">
+                            <div class="news-date">2024/10/20</div>
+                            <div class="news-content">
+                                <span data-ko="논문이 Journal of Social Psychology에 게재되었습니다." data-en="Paper published in Journal of Social Psychology.">논문이 Journal of Social Psychology에 게재되었습니다.</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2024/8/14</div>
+                            <div class="news-content">
+                                <span data-ko="논문이 Nature Communications에 게재되었습니다." data-en="Paper published in Nature Communications.">논문이 Nature Communications에 게재되었습니다.</span><br>
+                                Smith, J., Kim, H., ... & Your Name. (2024). Understanding human behavior patterns in social contexts.
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2024/7/4</div>
+                            <div class="news-content">
+                                <span data-ko="논문이 Psychological Science에 게재되었습니다." data-en="Paper published in Psychological Science.">논문이 Psychological Science에 게재되었습니다.</span><br>
+                                Your Name, Kim, S., ... & Lee, M. (2024). Advances in forensic psychology research.
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section">
+                        <h4 class="year-title">2023년도</h4>
+                        
+                        <div class="news-item">
+                            <div class="news-date">2023/8/1</div>
+                            <div class="news-content">
+                                <span data-ko="논문이 Acta Psychologica에 게재되었습니다." data-en="Paper published in Acta Psychologica.">논문이 Acta Psychologica에 게재되었습니다.</span><br>
+                                Park, K., Your Name, & Choi, J. (2023). Social psychological factors in criminal behavior analysis.
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2023/4/1</div>
+                            <div class="news-content">
+                                <span data-ko="과학재단 연구과제 (2023-2027) 의 채택을 받게되었습니다." data-en="Received funding for research project (2023-2027) from Science Foundation.">과학재단 연구과제 (2023-2027) 의 채택을 받게되었습니다.</span><br>
+                                <span data-ko="연구제목: 디지털 시대의 인간 행동 반응을 분석하는 심리학적 통찰의 탐구" data-en="Research Title: Exploring Psychological Insights for Analyzing Human Behavioral Responses in the Digital Age">연구제목: 디지털 시대의 인간 행동 반응을 분석하는 심리학적 통찰의 탐구</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="career" class="tab-content">
+                <h2 class="section-title" data-ko="경력" data-en="Career">Career</h2>
+                
+                <div class="research-item">
+                    <div class="research-title" data-ko="현재 직책" data-en="Current Position">Current Position</div>
+                    <div class="research-description">
+                        <strong data-ko="부교수" data-en="Associate Professor">Associate Professor</strong> (2020 - Present)<br>
+                        <span data-ko="심리학과, 당신의 대학교" data-en="Department of Psychology, Your University">Department of Psychology, Your University</span><br>
+                        <span data-ko="전공: 사회심리학, 범죄심리학, 법정심리학" data-en="Specialization: Social Psychology, Forensic Psychology, Criminal Psychology">Specialization: Social Psychology, Forensic Psychology, Criminal Psychology</span>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title" data-ko="이전 직책" data-en="Previous Positions">Previous Positions</div>
+                    <div class="research-description">
+                        <strong data-ko="조교수" data-en="Assistant Professor">Assistant Professor</strong> (2016 - 2020)<br>
+                        <span data-ko="심리학과, 이전 대학교" data-en="Department of Psychology, Previous University">Department of Psychology, Previous University</span><br><br>
+                        
+                        <strong data-ko="박사후연구원" data-en="Postdoctoral Researcher">Postdoctoral Researcher</strong> (2014 - 2016)<br>
+                        <span data-ko="사회연구소, 연구대학교" data-en="Institute for Social Research, Research University">Institute for Social Research, Research University</span><br><br>
+                        
+                        <strong data-ko="연구원" data-en="Research Fellow">Research Fellow</strong> (2012 - 2014)<br>
+                        <span data-ko="국립정신건강연구소" data-en="National Institute of Mental Health">National Institute of Mental Health</span><br>
+                    </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title" data-ko="학력" data-en="Education">Education</div>
+                    <div class="research-description">
+                        <strong data-ko="심리학 박사" data-en="Ph.D. in Psychology">Ph.D. in Psychology</strong> (2012)<br>
+                        <span data-ko="대학원대학교, 심리학과" data-en="Graduate University, Department of Psychology">Graduate University, Department of Psychology</span><br>
+                        <span data-ko="논문제목: \"범죄행동 분석에서의 사회심리학적 요인들\"" data-en="Dissertation: \"Social Psychological Factors in Criminal Behavior Analysis\"">Dissertation: "Social Psychological Factors in Criminal Behavior Analysis"</span><br><br>
+                        
+                        <strong data-ko="심리학 석사" data-en="M.A. in Psychology">M.A. in Psychology</strong> (2008)<br>
+                        <span data-ko="대학원대학교, 심리학과" data-en="Graduate University, Department of Psychology">Graduate University, Department of Psychology</span><br><br>
+                        
+                        <strong data-ko="심리학 학사" data-en="B.A. in Psychology">B.A. in Psychology</strong> (2006)<br>
+                        <span data-ko="학부대학교, 심리학과" data-en="Undergraduate University, Department of Psychology">Undergraduate University, Department of Psychology</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="research" class="tab-content">
+                <h2 class="section-title" data-ko="연구" data-en="Research">Research</h2>
+                
+                <div class="research-item">
+                    <div class="research-title" data-ko="사회심리학 & 인간행동" data-en="Social Psychology & Human Behavior">Social Psychology & Human Behavior</div>
+                    <div class="research-description" data-ko="인간의 사회적 행동 패턴을 분석하고 예측하는 연구를 진행하고 있습니다. 특히 디지털 환경에서의 인간 상호작용과 그 심리적 메커니즘에 대해 연구합니다." data-en="I conduct research analyzing and predicting human social behavior patterns. I particularly focus on human interactions in digital environments and their psychological mechanisms.">인간의 사회적 행동 패턴을 분석하고 예측하는 연구를 진행하고 있습니다. 특히 디지털 환경에서의 인간 상호작용과 그 심리적 메커니즘에 대해 연구합니다.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title" data-ko="법정심리학 & 범죄행동" data-en="Forensic Psychology & Criminal Behavior">Forensic Psychology & Criminal Behavior</div>
+                    <div class="research-description" data-ko="범죄 심리학 분야에서 범죄자의 행동 패턴 분석과 법정 심리학적 평가 도구 개발에 관한 연구를 수행합니다. 특히 아동 학대와 관련된 심리적 요인들을 분석합니다." data-en="I conduct research on analyzing criminal behavior patterns and developing forensic psychological assessment tools. I particularly analyze psychological factors related to child abuse.">범죄 심리학 분야에서 범죄자의 행동 패턴 분석과 법정 심리학적 평가 도구 개발에 관한 연구를 수행합니다. 특히 아동 학대와 관련된 심리적 요인들을 분석합니다.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title" data-ko="심리학 통계방법론" data-en="Statistical Methods in Psychology">Statistical Methods in Psychology</div>
+                    <div class="research-description" data-ko="심리학 연구에서의 통계적 방법론 개발과 데이터 시각화 기법을 연구합니다. Python과 R을 활용한 고급 통계 분석 방법을 개발하여 심리학 연구의 정확성을 높이는데 기여합니다." data-en="I research statistical methodology development and data visualization techniques in psychological research. I develop advanced statistical analysis methods using Python and R to enhance the accuracy of psychological research.">심리학 연구에서의 통계적 방법론 개발과 데이터 시각화 기법을 연구합니다. Python과 R을 활용한 고급 통계 분석 방법을 개발하여 심리학 연구의 정확성을 높이는데 기여합니다.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title" data-ko="얼굴표정 & 감정인식" data-en="Facial Expression & Emotion Recognition">Facial Expression & Emotion Recognition</div>
+                    <div class="research-description" data-ko="얼굴 표정을 통한 감정 인식과 그 심리적 의미에 대한 연구를 진행합니다. 특히 법정에서의 증언 신빙성 평가와 관련된 표정 분석 기술을 개발합니다." data-en="I conduct research on emotion recognition through facial expressions and their psychological meanings. I particularly develop facial expression analysis technologies related to assessing testimony credibility in legal settings.">얼굴 표정을 통한 감정 인식과 그 심리적 의미에 대한 연구를 진행합니다. 특히 법정에서의 증언 신빙성 평가와 관련된 표정 분석 기술을 개발합니다.</div>
+                </div>
+            </div>
+
+            <div id="links" class="tab-content">
+                <h2 class="section-title" data-ko="링크" data-en="Links">Links</h2>
+                
+                <div class="links-grid">
+                    <div class="link-category">
+                        <h3 data-ko="학술 프로필" data-en="Academic Profiles">Academic Profiles</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank">Google Scholar</a></li>
+                            <li><a href="#" target="_blank">ResearchGate</a></li>
+                            <li><a href="#" target="_blank">ORCID</a></li>
+                            <li><a href="#" target="_blank">Academia.edu</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-category">
+                        <h3 data-ko="논문 및 출간물" data-en="Publications">Publications</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank" data-ko="PubMed 논문들" data-en="PubMed Publications">PubMed Publications</a></li>
+                            <li><a href="#" target="_blank" data-ko="심리학 저널" data-en="Psychology Journals">Psychology Journals</a></li>
+                            <li><a href="#" target="_blank" data-ko="최근 논문들" data-en="Recent Papers">Recent Papers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-category">
+                        <h3 data-ko="업무 관련" data-en="Professional">Professional</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank" data-ko="대학교 프로필" data-en="University Profile">University Profile</a></li>
+                            <li><a href="#" target="_blank" data-ko="학과 홈페이지" data-en="Department Homepage">Department Homepage</a></li>
+                            <li><a href="#" target="_blank" data-ko="연구실" data-en="Research Lab">Research Lab</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-category">
+                        <h3 data-ko="자료 및 도구" data-en="Resources">Resources</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank" data-ko="통계 도구 (Python/R)" data-en="Statistical Tools (Python/R)">Statistical Tools (Python/R)</a></li>
+                            <li><a href="#" target="_blank" data-ko="데이터 시각화 예제" data-en="Data Visualization Examples">Data Visualization Examples</a></li>
+                            <li><a href="#" target="_blank" data-ko="연구 데이터셋" data-en="Research Datasets">Research Datasets</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> target="_blank">PubMed Publications</a></li>
+                            <li><a href="#" target="_blank">Psychology Journals</a></li>
+                            <li><a href="#" target="_blank">Recent Papers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-category">
+                        <h3>Professional</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank">University Profile</a></li>
+                            <li><a href="#" target="_blank">Department Homepage</a></li>
+                            <li><a href="#" target="_blank">Research Lab</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-category">
+                        <h3>Resources</h3>
+                        <ul class="link-list">
+                            <li><a href="#" target="_blank">Statistical Tools (Python/R)</a></li>
+                            <li><a href="#" target="_blank">Data Visualization Examples</a></li>
+                            <li><a href="#" target="_blank">Research Datasets</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en'; // Default language
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab links
+            tablinks = document.getElementsByClassName("nav-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Show the selected tab content and mark the button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ko' : 'en';
+            
+            // Update language switcher text
+            const langText = document.getElementById('lang-text');
+            langText.textContent = currentLanguage === 'en' ? 'ENGLISH' : '한국어';
+            
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-ko][data-en]');
+            elements.forEach(element => {
+                if (currentLanguage === 'ko') {
+                    element.textContent = element.getAttribute('data-ko');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Initialize with English
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleLanguage();
+            toggleLanguage(); // Call twice to set to English initially
+        });
+    </script>
+</body>
+</html>
