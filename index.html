@@ -573,9 +573,9 @@
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'en' ? 'ko' : 'en';
             
-            // Update language switcher text
+            // Update language switcher text (show the OTHER language you can switch to)
             const langText = document.getElementById('lang-text');
-            langText.textContent = currentLanguage === 'en' ? 'ENGLISH' : '한국어';
+            langText.textContent = currentLanguage === 'en' ? '한국어' : 'ENGLISH';
             
             // Update all elements with data attributes
             const elements = document.querySelectorAll('[data-ko][data-en]');
@@ -593,7 +593,7 @@
             // Set initial language to English
             currentLanguage = 'en';
             const langText = document.getElementById('lang-text');
-            langText.textContent = 'ENGLISH';
+            langText.textContent = '한국어'; // Show Korean button since current is English
             
             // Update all elements to show English text
             const elements = document.querySelectorAll('[data-ko][data-en]');
