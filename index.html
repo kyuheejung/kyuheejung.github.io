@@ -590,8 +590,16 @@
 
         // Initialize with English
         document.addEventListener('DOMContentLoaded', function() {
-            toggleLanguage();
-            toggleLanguage(); // Call twice to set to English initially
+            // Set initial language to English
+            currentLanguage = 'en';
+            const langText = document.getElementById('lang-text');
+            langText.textContent = 'ENGLISH';
+            
+            // Update all elements to show English text
+            const elements = document.querySelectorAll('[data-ko][data-en]');
+            elements.forEach(element => {
+                element.textContent = element.getAttribute('data-en');
+            });
         });
     </script>
 </body>
