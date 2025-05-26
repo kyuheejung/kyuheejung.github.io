@@ -124,10 +124,27 @@
             display: block;
         }
 
-        .profile-section {
+        .home-layout {
             display: flex;
             gap: 40px;
             margin-bottom: 40px;
+        }
+
+        .left-section {
+            flex: 0 0 400px;
+            padding-right: 20px;
+        }
+
+        .divider {
+            width: 2px;
+            background: linear-gradient(to bottom, #007bff, #6c757d);
+            flex-shrink: 0;
+            margin: 0 20px;
+        }
+
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
         }
 
         .profile-image {
@@ -135,8 +152,9 @@
             height: 250px;
             background: #e9ecef;
             border-radius: 10px;
-            flex-shrink: 0;
+            margin: 0 auto 20px auto;
             overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .profile-image img {
@@ -146,7 +164,7 @@
         }
 
         .profile-info {
-            flex: 1;
+            text-align: left;
         }
 
         .profile-name {
@@ -286,15 +304,33 @@
         }
 
         @media (max-width: 768px) {
-            .profile-section {
+            .home-layout {
                 flex-direction: column;
+                gap: 20px;
+            }
+
+            .left-section {
+                flex: none;
+                padding-right: 0;
                 text-align: center;
+            }
+
+            .divider {
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(to right, #007bff, #6c757d);
+                margin: 20px 0;
+            }
+
+            .right-section {
+                flex: none;
+                padding-left: 0;
             }
 
             .profile-image {
                 width: 150px;
                 height: 180px;
-                margin: 0 auto;
+                margin: 0 auto 20px auto;
             }
 
             .nav-tabs {
@@ -336,29 +372,33 @@
 
         <div class="content">
             <div id="home" class="tab-content active">
-                <div class="profile-section">
-                    <div class="profile-image">
-                        <!-- Replace with your photo -->
-                        <img src="profile.png" alt="Profile Photo">
-                    </div>
-                    <div class="profile-info">
-                        <h2 class="profile-name" data-ko="정규희 (鄭 珪煕)" data-en="Kyu-hee Jung (鄭 珪煕)">Kyu-hee Jung (鄭 珪煕)</h2>
-                        <p class="profile-title" data-ko="사회심리학 박사" data-en="Ph.D. in Social Psychology">Ph.D. in Social Psychology</p>
-                        <div class="profile-details">
-                            <p><strong data-ko="소속:" data-en="Affiliation:">Affiliation:</strong> <span data-ko="국립과학수사연구원" data-en="National Forensic Service (NFS), Korea">National Forensic Service (NFS), Korea</span></p>
-                            <p><strong data-ko="학과:" data-en="Department:">Department:</strong> <span data-ko="법의검사과" data-en="Department of Forensic Medical Examination">Department of Forensic Medical Examination</span></p>
-                            <p><strong data-ko="직책:" data-en="Position:">Position:</strong> <span data-ko="연구원" data-en="Researcher">Researcher</span></p>
-                            <p><strong data-ko="전공:" data-en="Specialization:">Specialization:</strong> <span data-ko="사회심리학, 범죄심리학, 아동학대" data-en="Social Psychology, Forensic Psychology, Child Abuse">Social Psychology, Forensic Psychology, Child Abuse</span></p>
-                            <br>
-                            <p><strong data-ko="주소:" data-en="Address:">Address:</strong> <span data-ko="강원도 원주시 입춘로 10, 국립과학수사연구원 법의검사과" data-en="Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea">Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea</span></p>
-                            <p><strong data-ko="이메일:" data-en="Email:">Email:</strong> <a href="mailto:sweetkiwij@gmail.com">sweetkiwij@gmail.com</a></p>
-                            <p><strong data-ko="별명:" data-en="Also known as:">Also known as:</strong> <span data-ko="Kyuhee Jung, KyuHee Jung" data-en="Kyuhee Jung, KyuHee Jung">Kyuhee Jung, KyuHee Jung</span></p>
+                <div class="home-layout">
+                    <div class="left-section">
+                        <div class="profile-image">
+                            <!-- Replace with your photo -->
+                            <img src="profile.png" alt="Profile Photo">
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name" data-ko="정규희 (鄭 珪煕)" data-en="Kyu-hee Jung (鄭 珪煕)">Kyu-hee Jung (鄭 珪煕)</h2>
+                            <p class="profile-title" data-ko="사회심리학 박사" data-en="Ph.D. in Social Psychology">Ph.D. in Social Psychology</p>
+                            <div class="profile-details">
+                                <p><strong data-ko="소속:" data-en="Affiliation:">Affiliation:</strong> <span data-ko="국립과학수사연구원" data-en="National Forensic Service (NFS), Korea">National Forensic Service (NFS), Korea</span></p>
+                                <p><strong data-ko="학과:" data-en="Department:">Department:</strong> <span data-ko="법의검사과" data-en="Department of Forensic Medical Examination">Department of Forensic Medical Examination</span></p>
+                                <p><strong data-ko="직책:" data-en="Position:">Position:</strong> <span data-ko="연구원" data-en="Researcher">Researcher</span></p>
+                                <p><strong data-ko="전공:" data-en="Specialization:">Specialization:</strong> <span data-ko="사회심리학, 범죄심리학, 아동학대" data-en="Social Psychology, Forensic Psychology, Child Abuse">Social Psychology, Forensic Psychology, Child Abuse</span></p>
+                                <br>
+                                <p><strong data-ko="주소:" data-en="Address:">Address:</strong> <span data-ko="강원도 원주시 입춘로 10, 국립과학수사연구원 법의검사과" data-en="Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea">Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea</span></p>
+                                <p><strong data-ko="이메일:" data-en="Email:">Email:</strong> <a href="mailto:sweetkiwij@gmail.com">sweetkiwij@gmail.com</a></p>
+                                <p><strong data-ko="별명:" data-en="Also known as:">Also known as:</strong> <span data-ko="Kyuhee Jung, KyuHee Jung" data-en="Kyuhee Jung, KyuHee Jung">Kyuhee Jung, KyuHee Jung</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="whats-new">
-                    <h3 class="section-title" data-ko="새소식" data-en="What's New">What's New</h3>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="right-section">
+                        <div class="whats-new">
+                            <h3 class="section-title" data-ko="새소식" data-en="What's New">What's New</h3>
                     
                     <div class="year-section">
                         <h4 class="year-title">2024년도</h4>
@@ -415,6 +455,76 @@
                                 <span data-ko="Korean Journal of Legal Medicine에 논문 게재: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'" data-en="Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'">Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'</span>
                                 <a href="https://doi.org/10.7580/kjlm.2023.47.4.122" class="info-link">INFO</a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section">
+                        <h4 class="year-title">2022년도</h4>
+                        
+                        <div class="news-item">
+                            <div class="news-date">2022/12</div>
+                            <div class="news-content">
+                                <span data-ko="한국범죄심리학회 동계학술대회에서 '디지털 범죄 예방을 위한 심리학적 접근' 발표" data-en="Presented 'Psychological Approaches to Digital Crime Prevention' at Korean Criminal Psychology Association Winter Conference">Presented 'Psychological Approaches to Digital Crime Prevention' at Korean Criminal Psychology Association Winter Conference</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2022/09</div>
+                            <div class="news-content">
+                                <span data-ko="국제아동학대예방학회에서 '한국의 아동학대 현황과 심리학적 개입' 발표" data-en="Presented 'Child Abuse Status in Korea and Psychological Interventions' at International Society for Prevention of Child Abuse and Neglect">Presented 'Child Abuse Status in Korea and Psychological Interventions' at International Society for Prevention of Child Abuse and Neglect</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2022/06</div>
+                            <div class="news-content">
+                                <span data-ko="법의학 전문가 자격증 취득" data-en="Obtained Forensic Medicine Specialist Certification">Obtained Forensic Medicine Specialist Certification</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section">
+                        <h4 class="year-title">2021년도</h4>
+                        
+                        <div class="news-item">
+                            <div class="news-date">2021/11</div>
+                            <div class="news-content">
+                                <span data-ko="Journal of Forensic Psychology에 논문 게재: 'Cultural Factors in Child Abuse Assessment'" data-en="Paper published in Journal of Forensic Psychology: 'Cultural Factors in Child Abuse Assessment'">Paper published in Journal of Forensic Psychology: 'Cultural Factors in Child Abuse Assessment'</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2021/08</div>
+                            <div class="news-content">
+                                <span data-ko="국립과학수사연구원 입사" data-en="Joined National Forensic Service">Joined National Forensic Service</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="year-section">
+                        <h4 class="year-title">2020년도</h4>
+                        
+                        <div class="news-item">
+                            <div class="news-date">2020/12</div>
+                            <div class="news-content">
+                                <span data-ko="박사학위 논문 심사 통과" data-en="Successfully defended doctoral dissertation">Successfully defended doctoral dissertation</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">2020/03</div>
+                            <div class="news-content">
+                                <span data-ko="Asian Journal of Social Psychology에 논문 게재: 'Cross-cultural Studies on Emotional Expression'" data-en="Paper published in Asian Journal of Social Psychology: 'Cross-cultural Studies on Emotional Expression'">Paper published in Asian Journal of Social Psychology: 'Cross-cultural Studies on Emotional Expression'</span>
+                                <a href="#" class="info-link">INFO</a>
+                            </div>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>
