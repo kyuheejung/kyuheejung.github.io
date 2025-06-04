@@ -119,10 +119,35 @@
             margin-bottom: 40px;
         }
 
-        .profile-basic {
+        .home-layout {
             display: flex;
             gap: 40px;
             margin-bottom: 40px;
+        }
+
+        .left-section {
+            flex: 0 0 400px;
+            padding-right: 20px;
+        }
+
+        .divider {
+            width: 2px;
+            background: linear-gradient(to bottom, #ddd, #999);
+            flex-shrink: 0;
+            margin: 0 20px;
+        }
+
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .profile-basic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .profile-image {
@@ -131,6 +156,7 @@
             background: #f0f0f0;
             border: 1px solid #ddd;
             flex-shrink: 0;
+            margin-bottom: 20px;
         }
 
         .profile-image img {
@@ -140,7 +166,7 @@
         }
 
         .profile-info {
-            flex: 1;
+            width: 100%;
         }
 
         .profile-name {
@@ -335,7 +361,7 @@
     </div>
 
     <header class="header">
-        <h1 class="site-title" data-ko="정규희 사회심리학" data-en="Kyu-hee Jung Social Psychology">Kyu-hee Jung Social Psychology</h1>
+        <h1 class="site-title" data-ko="정규희(Kyu-hee Jung, 鄭珪煕, ジョンギュヒ)" data-en="Kyu-hee Jung (정규희, 鄭珪煕, ジョンギュヒ)">Kyu-hee Jung Social Psychology</h1>
         
         <nav>
             <ul class="nav-menu">
@@ -350,247 +376,255 @@
     <main class="content">
         <div id="home" class="tab-content active">
             <div class="profile-section">
-                <div class="profile-basic">
-                    <div class="profile-image">
-                        <img src="profile.png" alt="Profile Photo">
+                <div class="home-layout">
+                    <div class="left-section">
+                        <div class="profile-basic">
+                            <div class="profile-image">
+                                <img src="profile.png" alt="Profile Photo">
+                            </div>
+                            <div class="profile-info">
+                                <h2 class="profile-name" data-ko="정규희 (鄭 珪煕)" data-en="Kyu-hee Jung (鄭 珪煕)">Kyu-hee Jung (鄭 珪煕)</h2>
+                                <p class="profile-title" data-ko="사회심리학 박사" data-en="Ph.D. in Social Psychology">Ph.D. in Social Psychology</p>
+                                
+                                <table class="info-table">
+                                    <tr>
+                                        <th data-ko="소속" data-en="Affiliation">Affiliation</th>
+                                        <td data-ko="국립과학수사연구원" data-en="National Forensic Service (NFS), Korea">National Forensic Service (NFS), Korea</td>
+                                    </tr>
+                                    <tr>
+                                        <th data-ko="부서" data-en="Department">Department</th>
+                                        <td data-ko="법의검사과" data-en="Department of Forensic Medical Examination">Department of Forensic Medical Examination</td>
+                                    </tr>
+                                    <tr>
+                                        <th data-ko="직책" data-en="Position">Position</th>
+                                        <td data-ko="연구원" data-en="Researcher">Researcher</td>
+                                    </tr>
+                                    <tr>
+                                        <th data-ko="전문분야" data-en="Specialization">Specialization</th>
+                                        <td data-ko="사회심리학, 범죄심리학, 아동학대" data-en="Social Psychology, Forensic Psychology, Child Abuse">Social Psychology, Forensic Psychology, Child Abuse</td>
+                                    </tr>
+                                    <tr>
+                                        <th data-ko="이메일" data-en="Email">Email</th>
+                                        <td><a href="mailto:sweetkiwij@gmail.com">sweetkiwij@gmail.com</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th data-ko="주소" data-en="Address">Address</th>
+                                        <td data-ko="강원도 원주시 입춘로 10, 국립과학수사연구원 법의검사과" data-en="Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea">Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="profile-info">
-                        <h2 class="profile-name" data-ko="정규희 (鄭 珪煕)" data-en="Kyu-hee Jung (鄭 珪煕)">Kyu-hee Jung (鄭 珪煕)</h2>
-                        <p class="profile-title" data-ko="사회심리학 박사" data-en="Ph.D. in Social Psychology">Ph.D. in Social Psychology</p>
-                        
-                        <table class="info-table">
-                            <tr>
-                                <th data-ko="소속" data-en="Affiliation">Affiliation</th>
-                                <td data-ko="국립과학수사연구원" data-en="National Forensic Service (NFS), Korea">National Forensic Service (NFS), Korea</td>
-                            </tr>
-                            <tr>
-                                <th data-ko="부서" data-en="Department">Department</th>
-                                <td data-ko="법의검사과" data-en="Department of Forensic Medical Examination">Department of Forensic Medical Examination</td>
-                            </tr>
-                            <tr>
-                                <th data-ko="직책" data-en="Position">Position</th>
-                                <td data-ko="연구원" data-en="Researcher">Researcher</td>
-                            </tr>
-                            <tr>
-                                <th data-ko="전문분야" data-en="Specialization">Specialization</th>
-                                <td data-ko="사회심리학, 범죄심리학, 아동학대" data-en="Social Psychology, Forensic Psychology, Child Abuse">Social Psychology, Forensic Psychology, Child Abuse</td>
-                            </tr>
-                            <tr>
-                                <th data-ko="이메일" data-en="Email">Email</th>
-                                <td><a href="mailto:sweetkiwij@gmail.com">sweetkiwij@gmail.com</a></td>
-                            </tr>
-                            <tr>
-                                <th data-ko="주소" data-en="Address">Address</th>
-                                <td data-ko="강원도 원주시 입춘로 10, 국립과학수사연구원 법의검사과" data-en="Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea">Department of Forensic Medical Examination, National Forensic Service, 10 Ipchun-ro, Wonju, Gangwon-do 26460, Republic of Korea</td>
-                            </tr>
-                        </table>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="right-section">
+                        <div class="year-section">
+                            <h3 class="section-title" data-ko="새소식" data-en="What's New">What's New</h3>
+                            
+                            <div class="year-section">
+                                <h4 class="year-title">2025년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2025/6~</td>
+                                        <td class="content-col">
+                                            <span data-ko="아동권리보장원 아동학대 협동교육 강의 시작" data-en="Started as instructor for child abuse collaborative education at Korea Child Rights Guarantee Institute">Started as instructor for child abuse collaborative education at Korea Child Rights Guarantee Institute</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2025/6/20</td>
+                                        <td class="content-col">
+                                            <span data-ko="울산아동보호전문기관 직원역량강화교육 '아동학대사망의 이해' 강의" data-en="Lectured on 'Understanding Child Abuse Death' at Ulsan Child Protection Agency staff capacity building education">Lectured on 'Understanding Child Abuse Death' at Ulsan Child Protection Agency staff capacity building education</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2025/5/19</td>
+                                        <td class="content-col">
+                                            <span data-ko="충북아동보호전문기관 직원역량강화교육 '양육능력과 양육의지로 본 아동학대' 강의" data-en="Lectured on 'Child Abuse from the Perspective of Parenting Ability and Willingness' at Chungbuk Child Protection Agency staff capacity building education">Lectured on 'Child Abuse from the Perspective of Parenting Ability and Willingness' at Chungbuk Child Protection Agency staff capacity building education</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2025/4/16</td>
+                                        <td class="content-col">
+                                            <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2025/3/28</td>
+                                        <td class="content-col">
+                                            <span data-ko="방첩사 생리심리검사관 양성교육 심리학 강의" data-en="Lectured on Psychology for Physiological Psychology Examiner Training at Defense Security Command">Lectured on Psychology for Physiological Psychology Examiner Training at Defense Security Command</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2024년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2024/11</td>
+                                        <td class="content-col">
+                                            <span data-ko="AAAM(Advanced Automotive Medical Congress)에서 '교통사고에서의 인간 오류와 인지 편향: 심리학적 접근' 발표" data-en="Presented 'Human Error and Cognitive Biases in Traffic Accidents: A Psychological Approach' at AAAM, Seoul">Presented 'Human Error and Cognitive Biases in Traffic Accidents: A Psychological Approach' at AAAM, Seoul</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2024/10</td>
+                                        <td class="content-col">
+                                            <span data-ko="CSI 2024에서 'AI 기반 미세 안면표정 시계열 분석을 통한 테러범행 의도 탐지' 발표" data-en="Presented 'AI-based Detection of Terrorist Intent through Time-series Analysis of Micro-facial Expressions' at CSI 2024, Incheon">Presented 'AI-based Detection of Terrorist Intent through Time-series Analysis of Micro-facial Expressions' at CSI 2024, Incheon</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2024/4/9</td>
+                                        <td class="content-col">
+                                            <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2023년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2023/10/17</td>
+                                        <td class="content-col">
+                                            <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2023/6</td>
+                                        <td class="content-col">
+                                            <span data-ko="제27차 대한법의학회 춘계학술대회에서 '법의부검자료를 통해 본 국내 신생아 살해의 현황, 유형과 조력자 여부에 따른 은폐시도' 포스터 발표" data-en="Poster presentation on 'Current Status and Types of Neonatal Homicide in Korea and Concealment Attempts by Presence of Accomplices' at 27th Korean Society of Legal Medicine Spring Conference">Poster presentation on 'Current Status and Types of Neonatal Homicide in Korea and Concealment Attempts by Presence of Accomplices' at 27th Korean Society of Legal Medicine Spring Conference</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2023/6</td>
+                                        <td class="content-col">
+                                            <span data-ko="Asia Pacific Medico Legal Agencies에서 'Fatal Child Maltreatment in South Korea' 발표" data-en="Presented 'Fatal Child Maltreatment in South Korea' at Asia Pacific Medico Legal Agencies">Presented 'Fatal Child Maltreatment in South Korea' at Asia Pacific Medico Legal Agencies</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2023</td>
+                                        <td class="content-col">
+                                            <span data-ko="도쿄대학교에서 사회심리학 박사학위 취득" data-en="Received Ph.D. in Social Psychology from University of Tokyo">Received Ph.D. in Social Psychology from University of Tokyo</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2023</td>
+                                        <td class="content-col">
+                                            <span data-ko="Korean Journal of Legal Medicine에 논문 게재: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'" data-en="Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'">Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'</span>
+                                            <a href="https://doi.org/10.7580/kjlm.2023.47.4.122" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2023</td>
+                                        <td class="content-col">
+                                            <span data-ko="Springer 출간: 'Manifestation of Violence' 챕터 기고" data-en="Book chapter published: 'Manifestation of Violence' in Handbook of Anger, Aggression, and Violence (Springer)">Book chapter published: 'Manifestation of Violence' in Handbook of Anger, Aggression, and Violence (Springer)</span>
+                                            <a href="https://doi.org/10.1007/978-3-030-98711-4_135-1" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2022년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2022</td>
+                                        <td class="content-col">
+                                            <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2022</td>
+                                        <td class="content-col">
+                                            <span data-ko="Springer 출간: 'Positive Psychology in South Korea and Japan' 챕터 기고" data-en="Book chapter published: 'Positive Psychology in South Korea and Japan' in The International Handbook of Positive Psychology (Springer)">Book chapter published: 'Positive Psychology in South Korea and Japan' in The International Handbook of Positive Psychology (Springer)</span>
+                                            <a href="https://doi.org/10.1007/978-3-030-57354-6_17" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2021년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2021</td>
+                                        <td class="content-col">
+                                            <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2020년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2020</td>
+                                        <td class="content-col">
+                                            <span data-ko="Child Abuse and Neglect 논문 게재: 'Cluster analysis of child-homicide in South Korea'" data-en="Paper published in Child Abuse and Neglect: 'Cluster analysis of child-homicide in South Korea'">Paper published in Child Abuse and Neglect: 'Cluster analysis of child-homicide in South Korea'</span>
+                                            <a href="https://doi.org/10.1016/j.chiabu.2019.104322" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2016년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2016</td>
+                                        <td class="content-col">
+                                            <span data-ko="Journal of Positive Psychology 논문 게재: 'Happiness as an Additional Antecedent of Schadenfreude'" data-en="Paper published in Journal of Positive Psychology: 'Happiness as an Additional Antecedent of Schadenfreude'">Paper published in Journal of Positive Psychology: 'Happiness as an Additional Antecedent of Schadenfreude'</span>
+                                            <a href="https://doi.org/10.1080/17439760.2016.1173224" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2016</td>
+                                        <td class="content-col">
+                                            <span data-ko="Korean Journal of Social and Personality Psychology 논문 게재: 'How we view people who feel joy in our misfortune'" data-en="Paper published in Korean Journal of Social and Personality Psychology: 'How we view people who feel joy in our misfortune'">Paper published in Korean Journal of Social and Personality Psychology: 'How we view people who feel joy in our misfortune'</span>
+                                            <a href="#" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="year-section">
+                                <h4 class="year-title">2012년도</h4>
+                                <table class="timeline-table">
+                                    <tr>
+                                        <td class="date-col">2012</td>
+                                        <td class="content-col">
+                                            <span data-ko="Social Behavior and Personality 논문 게재: 'Cognitive and Emotional Correlates of Different Types of Deception'" data-en="Paper published in Social Behavior and Personality: 'Cognitive and Emotional Correlates of Different Types of Deception'">Paper published in Social Behavior and Personality: 'Cognitive and Emotional Correlates of Different Types of Deception'</span>
+                                            <a href="http://dx.doi.org/10.2224/sbp.2012.40.4.575" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date-col">2012</td>
+                                        <td class="content-col">
+                                            <span data-ko="International Journal of Psychophysiology 논문 게재: 'Characteristics of Alpha Power Event-Related Desynchronization'" data-en="Paper published in International Journal of Psychophysiology: 'Characteristics of Alpha Power Event-Related Desynchronization'">Paper published in International Journal of Psychophysiology: 'Characteristics of Alpha Power Event-Related Desynchronization'</span>
+                                            <a href="https://doi.org/10.1016/j.ijpsycho.2012.04.009" class="info-link">INFO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="year-section">
-                <h3 class="section-title" data-ko="새소식" data-en="What's New">What's New</h3>
-                
-                <div class="year-section">
-                    <h4 class="year-title">2025년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2025/6~</td>
-                            <td class="content-col">
-                                <span data-ko="아동권리보장원 아동학대 협동교육 강의 시작" data-en="Started as instructor for child abuse collaborative education at Korea Child Rights Guarantee Institute">Started as instructor for child abuse collaborative education at Korea Child Rights Guarantee Institute</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2025/6/20</td>
-                            <td class="content-col">
-                                <span data-ko="울산아동보호전문기관 직원역량강화교육 '아동학대사망의 이해' 강의" data-en="Lectured on 'Understanding Child Abuse Death' at Ulsan Child Protection Agency staff capacity building education">Lectured on 'Understanding Child Abuse Death' at Ulsan Child Protection Agency staff capacity building education</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2025/5/19</td>
-                            <td class="content-col">
-                                <span data-ko="충북아동보호전문기관 직원역량강화교육 '양육능력과 양육의지로 본 아동학대' 강의" data-en="Lectured on 'Child Abuse from the Perspective of Parenting Ability and Willingness' at Chungbuk Child Protection Agency staff capacity building education">Lectured on 'Child Abuse from the Perspective of Parenting Ability and Willingness' at Chungbuk Child Protection Agency staff capacity building education</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2025/4/16</td>
-                            <td class="content-col">
-                                <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2025/3/28</td>
-                            <td class="content-col">
-                                <span data-ko="방첩사 생리심리검사관 양성교육 심리학 강의" data-en="Lectured on Psychology for Physiological Psychology Examiner Training at Defense Security Command">Lectured on Psychology for Physiological Psychology Examiner Training at Defense Security Command</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2024년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2024/11</td>
-                            <td class="content-col">
-                                <span data-ko="AAAM(Advanced Automotive Medical Congress)에서 '교통사고에서의 인간 오류와 인지 편향: 심리학적 접근' 발표" data-en="Presented 'Human Error and Cognitive Biases in Traffic Accidents: A Psychological Approach' at AAAM, Seoul">Presented 'Human Error and Cognitive Biases in Traffic Accidents: A Psychological Approach' at AAAM, Seoul</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2024/10</td>
-                            <td class="content-col">
-                                <span data-ko="CSI 2024에서 'AI 기반 미세 안면표정 시계열 분석을 통한 테러범행 의도 탐지' 발표" data-en="Presented 'AI-based Detection of Terrorist Intent through Time-series Analysis of Micro-facial Expressions' at CSI 2024, Incheon">Presented 'AI-based Detection of Terrorist Intent through Time-series Analysis of Micro-facial Expressions' at CSI 2024, Incheon</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2024/4/9</td>
-                            <td class="content-col">
-                                <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2023년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2023/10/17</td>
-                            <td class="content-col">
-                                <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2023/6</td>
-                            <td class="content-col">
-                                <span data-ko="제27차 대한법의학회 춘계학술대회에서 '법의부검자료를 통해 본 국내 신생아 살해의 현황, 유형과 조력자 여부에 따른 은폐시도' 포스터 발표" data-en="Poster presentation on 'Current Status and Types of Neonatal Homicide in Korea and Concealment Attempts by Presence of Accomplices' at 27th Korean Society of Legal Medicine Spring Conference">Poster presentation on 'Current Status and Types of Neonatal Homicide in Korea and Concealment Attempts by Presence of Accomplices' at 27th Korean Society of Legal Medicine Spring Conference</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2023/6</td>
-                            <td class="content-col">
-                                <span data-ko="Asia Pacific Medico Legal Agencies에서 'Fatal Child Maltreatment in South Korea' 발표" data-en="Presented 'Fatal Child Maltreatment in South Korea' at Asia Pacific Medico Legal Agencies">Presented 'Fatal Child Maltreatment in South Korea' at Asia Pacific Medico Legal Agencies</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2023</td>
-                            <td class="content-col">
-                                <span data-ko="도쿄대학교에서 사회심리학 박사학위 취득" data-en="Received Ph.D. in Social Psychology from University of Tokyo">Received Ph.D. in Social Psychology from University of Tokyo</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2023</td>
-                            <td class="content-col">
-                                <span data-ko="Korean Journal of Legal Medicine에 논문 게재: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'" data-en="Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'">Paper published in Korean Journal of Legal Medicine: 'Exploring the Relationship between Psychosocial Risk Factors and Sudden Unexplained Infant Death'</span>
-                                <a href="https://doi.org/10.7580/kjlm.2023.47.4.122" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2023</td>
-                            <td class="content-col">
-                                <span data-ko="Springer 출간: 'Manifestation of Violence' 챕터 기고" data-en="Book chapter published: 'Manifestation of Violence' in Handbook of Anger, Aggression, and Violence (Springer)">Book chapter published: 'Manifestation of Violence' in Handbook of Anger, Aggression, and Violence (Springer)</span>
-                                <a href="https://doi.org/10.1007/978-3-030-98711-4_135-1" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2022년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2022</td>
-                            <td class="content-col">
-                                <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2022</td>
-                            <td class="content-col">
-                                <span data-ko="Springer 출간: 'Positive Psychology in South Korea and Japan' 챕터 기고" data-en="Book chapter published: 'Positive Psychology in South Korea and Japan' in The International Handbook of Positive Psychology (Springer)">Book chapter published: 'Positive Psychology in South Korea and Japan' in The International Handbook of Positive Psychology (Springer)</span>
-                                <a href="https://doi.org/10.1007/978-3-030-57354-6_17" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2021년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2021</td>
-                            <td class="content-col">
-                                <span data-ko="국립과학수사연구원 아동사망의 이해과정 강의" data-en="Lectured on 'Understanding Child Death' at National Forensic Service">Lectured on 'Understanding Child Death' at National Forensic Service</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2020년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2020</td>
-                            <td class="content-col">
-                                <span data-ko="Child Abuse and Neglect 논문 게재: 'Cluster analysis of child-homicide in South Korea'" data-en="Paper published in Child Abuse and Neglect: 'Cluster analysis of child-homicide in South Korea'">Paper published in Child Abuse and Neglect: 'Cluster analysis of child-homicide in South Korea'</span>
-                                <a href="https://doi.org/10.1016/j.chiabu.2019.104322" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2016년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2016</td>
-                            <td class="content-col">
-                                <span data-ko="Journal of Positive Psychology 논문 게재: 'Happiness as an Additional Antecedent of Schadenfreude'" data-en="Paper published in Journal of Positive Psychology: 'Happiness as an Additional Antecedent of Schadenfreude'">Paper published in Journal of Positive Psychology: 'Happiness as an Additional Antecedent of Schadenfreude'</span>
-                                <a href="https://doi.org/10.1080/17439760.2016.1173224" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2016</td>
-                            <td class="content-col">
-                                <span data-ko="Korean Journal of Social and Personality Psychology 논문 게재: 'How we view people who feel joy in our misfortune'" data-en="Paper published in Korean Journal of Social and Personality Psychology: 'How we view people who feel joy in our misfortune'">Paper published in Korean Journal of Social and Personality Psychology: 'How we view people who feel joy in our misfortune'</span>
-                                <a href="#" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="year-section">
-                    <h4 class="year-title">2012년도</h4>
-                    <table class="timeline-table">
-                        <tr>
-                            <td class="date-col">2012</td>
-                            <td class="content-col">
-                                <span data-ko="Social Behavior and Personality 논문 게재: 'Cognitive and Emotional Correlates of Different Types of Deception'" data-en="Paper published in Social Behavior and Personality: 'Cognitive and Emotional Correlates of Different Types of Deception'">Paper published in Social Behavior and Personality: 'Cognitive and Emotional Correlates of Different Types of Deception'</span>
-                                <a href="http://dx.doi.org/10.2224/sbp.2012.40.4.575" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-col">2012</td>
-                            <td class="content-col">
-                                <span data-ko="International Journal of Psychophysiology 논문 게재: 'Characteristics of Alpha Power Event-Related Desynchronization'" data-en="Paper published in International Journal of Psychophysiology: 'Characteristics of Alpha Power Event-Related Desynchronization'">Paper published in International Journal of Psychophysiology: 'Characteristics of Alpha Power Event-Related Desynchronization'</span>
-                                <a href="https://doi.org/10.1016/j.ijpsycho.2012.04.009" class="info-link">INFO</a>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
@@ -607,19 +641,19 @@
                     </tr>
                     <tr>
                         <td class="date-col">2023</td>
-                        <td class="content-col" data-ko="도쿄대학교 대학원 인문사회계연구과 박사학위 취득 (사회심리학)" data-en="Ph.D. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo">Ph.D. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo</td>
+                        <td class="content-col" data-ko="도쿄대학교 대학원 인문사회계연구과 박사 (사회심리학)" data-en="Ph.D. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo">Ph.D. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo</td>
                     </tr>
                     <tr>
                         <td class="date-col">2012</td>
-                        <td class="content-col" data-ko="도쿄대학교 대학원 인문사회계연구과 석사학위 취득 (사회심리학)" data-en="M.A. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo">M.A. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo</td>
+                        <td class="content-col" data-ko="도쿄대학교 대학원 인문사회계연구과 석사 (사회심리학)" data-en="M.A. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo">M.A. in Social Psychology, Graduate School of Humanities and Sociology, University of Tokyo</td>
                     </tr>
                     <tr>
                         <td class="date-col">2009</td>
-                        <td class="content-col" data-ko="중앙대학교 대학원 심리학과 석사학위 취득 (임상심리학)" data-en="M.A. in Clinical Psychology, Department of Psychology, Chung-Ang University">M.A. in Clinical Psychology, Department of Psychology, Chung-Ang University</td>
+                        <td class="content-col" data-ko="중앙대학교 대학원 심리학과 석사 (임상심리학)" data-en="M.A. in Clinical Psychology, Department of Psychology, Chung-Ang University">M.A. in Clinical Psychology, Department of Psychology, Chung-Ang University</td>
                     </tr>
                     <tr>
                         <td class="date-col">2007</td>
-                        <td class="content-col" data-ko="중앙대학교 심리학과 학사학위 취득" data-en="B.A. in Psychology, Department of Psychology, Chung-Ang University">B.A. in Psychology, Department of Psychology, Chung-Ang University</td>
+                        <td class="content-col" data-ko="중앙대학교 심리학과 학사" data-en="B.A. in Psychology, Department of Psychology, Chung-Ang University">B.A. in Psychology, Department of Psychology, Chung-Ang University</td>
                     </tr>
                 </table>
             </div>
